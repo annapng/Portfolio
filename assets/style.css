@@ -3,38 +3,42 @@ h1 {
     font-size: 24px; 
 }
 
+
+h1 a {
+  text-decoration: none;
+  color:#17c57a;
+}
+
+
+h1 a:hover {
+  color: white;
+  transition: all .5s ease;
+}
+
+
 body {
-    background-image:  url("C:\Users\proba\bootcamp\portfolio\Portfolio\assets\memphis-mini-dark.png");
-    background-repeat: repeat;
     background-color: #17c57a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
   }
 
 
 #navbar ul {
-    
-
     list-style-type: none;
     text-align: center;
     right: 0;
     margin-top: 25px;
-   
- 
- 
 }
+
 
 #navbar ul li {
     display: inline-block;
     width: 200px;
-    height: 100px;
-
-    
-
-   
+    height: 100px;   
 }
 
 
 #topbar {
-
     width:110%;
     height:100px;
     background:rgb(0, 0, 0);
@@ -43,13 +47,10 @@ body {
     left: -20px;
     z-index:5;
     color: #17c57a;
-
 }
 
 
-
 #sidebar {
-
     height: 100%;
     width: 300px; 
     border: 1px solid rgb(0, 0, 0);
@@ -62,6 +63,7 @@ body {
 }
 
 
+/* Extra classes to ensure the sidebar works correctly with all its parts */
 .sidebarContainer {
     display: flex;
     flex-direction: column;
@@ -69,21 +71,22 @@ body {
   }
   
   .sidebarItem {
-    height: 40px;
-    margin-bottom: 10px;
+    width: 200px; 
   }
 
+  .sidebarDesc {
+    bottom: 0;
+ }
 
 
 #crt {
-    border: 1px solid black;
     width: 300px;
     height: 300px;
     position: fixed;
     z-index: 9;
     left: -15px;
-
 }
+
 
 #crt img {
         max-width: 90%;
@@ -94,36 +97,23 @@ body {
         z-index: 9;
 }
 
-#links {
-    position:fixed;
-    left: -20px;
-    bottom:10px;
-    width: 280px;
-}
 
-#links ul li{
-    text-align: center;
-    list-style-type: none;
-    font-style: bold;
-}
-
-
-#name{
+#myName {
 margin-top: 310px;
 font-family: 'Courier New', Courier, monospace;
 font-weight: bold;
 font-size: 24px;
-border: 1px solid black;
-
 }
+
 
 #aboutMe {
-    
 font-family: 'Courier New', Courier, monospace;
-border: 1px solid blueviolet;
-
+margin-bottom: 0;
+margin-right: 0;
 }
 
+
+/* An extra div to contain all the body parts, make it work a bit better */
 .mainContainer {
     display: flex;
     flex-direction: column;
@@ -133,36 +123,38 @@ border: 1px solid blueviolet;
     right: 0%;
     height:80%;
     width:80%;
-    border: 1px solid blue;
     z-index: 1;
   }
   
+
   .item {
- 
     width: 80%;
     margin-bottom: 10px;
-    border: 1px solid red;
   }
+
 
   .projectContainer {
     display: flex;
     flex-wrap: wrap; 
     justify-content: space-between;
+  }
 
-}
 
+  /* Pictures + Flexbox structure for them */
     #p1
-    { background-color: pink; 
+    { 
         width: 49%;
         height: 300px;
         margin-bottom: 2%;
       
     }
   
+
    #p1:first-child {
         width: 100%;
         height: 350px;
       }
+
 
     #p1 img {
         max-width: 100%;
@@ -171,24 +163,19 @@ border: 1px solid blueviolet;
         filter: grayscale(100%);
       }
 
+
       #p1 img:hover {
         transition: all .6s ease;
         filter: grayscale(0%);
       }
 
-  #projects {
-   /* height: 700px; */
-
-  }
 
   #resume {
     height: 200px;
     width: 80%;
-    
   }
 
 
-/* Style buttons */
 .download {
         background-color: #5e5e5e;
         color: white;
@@ -199,38 +186,39 @@ border: 1px solid blueviolet;
         margin: 0 auto;
         font-size: 16px;
         display: flex;
-        
-  justify-content: center;
-      
+        justify-content: center;
         cursor: pointer;
         padding-bottom:-5px;
     }
   
-  /* Darker background on mouse-over */
+
   .download:hover {
     background-color: rgb(168, 168, 168);
   }
 
 
-  .tab { margin-left: 40px; }
+  /* An extra class to make a tab in regular HTML. Didn't know this pretty normal! */
+.tab { margin-left: 40px; }
+
 
   #contact {
     height: 200px;
   }
 
-  .contactForm {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+
+  #contact a {
+    color:#000000;
   }
 
-
-
+/* A faux footer... since it had to be in the main container */
   #foot {
-
     text-align: center;
     font-style: italic; 
   }
 
 
-
+  @media screen and (max-width: 1050px) {
+    #sidebar {
+      display: none;
+    }
+  }
